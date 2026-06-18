@@ -1,0 +1,1313 @@
+/*
+ * apaper for Typora
+ * A local editing theme that approximates this workspace's AstroPaper blog.
+ */
+
+@import url("./apaper/fonts/maple-mono-cn/result.css");
+
+:root {
+  --apaper-font: "Maple Mono CN", "Google Sans Code", ui-monospace,
+    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  --bg-color: #fdfdfd;
+  --text-color: #282728;
+  --md-char-color: rgba(40, 39, 40, 0.42);
+  --meta-content-color: rgba(40, 39, 40, 0.64);
+  --primary-color: #006cac;
+  --primary-btn-border-color: #006cac;
+  --primary-btn-text-color: #fdfdfd;
+  --window-border: 1px solid #ece9e9;
+  --active-file-bg-color: #e6e6e6;
+  --active-file-text-color: #282728;
+  --active-file-border-color: #006cac;
+  --side-bar-bg-color: #fdfdfd;
+  --item-hover-bg-color: rgba(230, 230, 230, 0.72);
+  --item-hover-text-color: #282728;
+  --monospace: var(--apaper-font);
+
+  --astropaper-bg: #fdfdfd;
+  --astropaper-fg: #282728;
+  --astropaper-accent: #006cac;
+  --astropaper-muted: #e6e6e6;
+  --astropaper-border: #ece9e9;
+  --astropaper-code-bg: rgba(230, 230, 230, 0.75);
+  --astropaper-code-block-bg: #f6f8fa;
+  --astropaper-code-fg: #24292f;
+  --astropaper-line-highlight: rgba(148, 163, 184, 0.2);
+  --astropaper-selection: rgba(0, 108, 172, 0.75);
+}
+
+html {
+  font-size: 16px;
+  background: var(--astropaper-bg);
+}
+
+html,
+body,
+content {
+  background: var(--astropaper-bg);
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+  letter-spacing: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--astropaper-selection);
+  color: var(--astropaper-bg);
+}
+
+#write {
+  box-sizing: border-box;
+  max-width: 48rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 3.5rem 1rem 6rem;
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+#write > *:first-child {
+  margin-top: 0;
+}
+
+#write p,
+#write ul,
+#write ol,
+#write blockquote,
+#write table,
+#write pre,
+#write details {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+#write p {
+  color: var(--astropaper-fg);
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  margin: 2rem 0 0.75rem;
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+#write h1 {
+  margin-top: 0;
+  font-size: 2.25rem;
+  line-height: 1.15;
+}
+
+#write h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--astropaper-border);
+  font-size: 1.7rem;
+}
+
+#write h3 {
+  font-size: 1.38rem;
+  font-style: italic;
+}
+
+#write h4 {
+  font-size: 1.16rem;
+}
+
+#write h5 {
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+#write h6 {
+  font-size: 0.92rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+#write h6 {
+  color: rgba(40, 39, 40, 0.75);
+}
+
+#write .md-heading,
+#write [mdtype="heading"],
+#write .md-heading span,
+#write [mdtype="heading"] span {
+  font-family: var(--apaper-font) !important;
+}
+
+#write a,
+.md-def-url {
+  color: var(--astropaper-fg);
+  text-decoration-color: var(--astropaper-accent);
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
+  transition: color 120ms ease, text-decoration-color 120ms ease,
+    background-color 120ms ease;
+}
+
+#write a:hover {
+  color: var(--astropaper-accent);
+  text-decoration-color: currentColor;
+}
+
+#write strong,
+#write [md-inline="strong"] strong,
+#write [md-inline="strong"] span[md-inline="plain"] {
+  color: var(--astropaper-fg);
+  font-weight: 700;
+}
+
+#write [md-inline="strong"] .md-meta {
+  color: rgba(0, 108, 172, 0.55);
+  font-weight: 600;
+}
+
+#write em,
+#write [md-inline="em"] em,
+#write [md-inline="em"] span[md-inline="plain"] {
+  color: var(--astropaper-fg);
+  font-style: italic;
+}
+
+#write [md-inline="em"] .md-meta {
+  color: rgba(0, 108, 172, 0.5);
+}
+
+#write [md-inline="link"] .md-meta,
+#write [md-inline="link"] .md-content,
+#write [md-inline="url"] .md-meta,
+#write [md-inline="url"] .md-content {
+  color: rgba(0, 108, 172, 0.62);
+}
+
+#write ul,
+#write ol {
+  padding-left: 1.55rem;
+}
+
+#write ul ul,
+#write ol ol,
+#write ul ol,
+#write ol ul {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+#write li {
+  padding-left: 0.2rem;
+  margin: 0.18rem 0;
+}
+
+#write li::marker {
+  color: var(--astropaper-accent);
+  font-weight: 700;
+}
+
+#write li > p {
+  margin: 0.25rem 0;
+}
+
+#write blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.7rem 1rem;
+  border-left: 0.22rem solid rgba(0, 108, 172, 0.78);
+  background: rgba(230, 230, 230, 0.24);
+  color: rgba(40, 39, 40, 0.82);
+  font-style: normal;
+}
+
+#write blockquote p {
+  color: inherit;
+}
+
+#write blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+#write blockquote strong {
+  color: var(--astropaper-fg);
+}
+
+#write blockquote .md-meta {
+  color: rgba(0, 108, 172, 0.62);
+}
+
+#write hr {
+  height: 1px;
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--astropaper-border);
+}
+
+#write img {
+  display: block;
+  max-width: 100%;
+  margin: 1.5rem auto;
+  border: 1px solid var(--astropaper-border);
+}
+
+#write .md-image {
+  display: inline-block;
+  max-width: 100%;
+  color: rgba(40, 39, 40, 0.62);
+}
+
+#write p > .md-image:only-child {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+#write .md-image img {
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  background: var(--astropaper-bg);
+}
+
+#write .md-image .md-meta,
+#write .md-image .md-content {
+  color: rgba(0, 108, 172, 0.56);
+  font-family: var(--apaper-font) !important;
+  font-size: 0.84rem;
+}
+
+#write .md-img-error {
+  padding: 0.75rem 1rem;
+  border: 1px dashed var(--astropaper-border);
+  border-radius: 0.25rem;
+  background: rgba(0, 108, 172, 0.06);
+}
+
+#write table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--astropaper-fg);
+  font-size: 0.95rem;
+  table-layout: auto;
+}
+
+#write th,
+#write td {
+  padding: 0.5rem;
+  border: 1px solid var(--astropaper-border);
+  vertical-align: top;
+  word-break: break-word;
+}
+
+#write th {
+  background: rgba(230, 230, 230, 0.42);
+  font-weight: 700;
+}
+
+#write thead th {
+  border-bottom-color: rgba(0, 108, 172, 0.42);
+}
+
+#write tr:nth-child(even) td {
+  background: rgba(230, 230, 230, 0.22);
+}
+
+#write table code {
+  word-break: break-all;
+}
+
+#write .md-table-edit,
+#write .md-table-resize-popover {
+  border: 1px solid var(--astropaper-border);
+  background: var(--astropaper-bg);
+  color: var(--astropaper-fg);
+}
+
+#write .md-table-edit .btn,
+#write .md-table-resize-popover .btn {
+  border-color: var(--astropaper-border);
+  color: var(--astropaper-fg);
+}
+
+#write code,
+#write [md-inline="code"] code,
+tt {
+  padding: 0.1rem 0.32rem;
+  border-radius: 0.25rem;
+  background: var(--astropaper-code-bg);
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+  font-size: 0.92em;
+  word-break: break-word;
+}
+
+#write [md-inline="code"] .md-meta {
+  color: rgba(40, 39, 40, 0.46);
+}
+
+#write pre.md-fences {
+  margin: 1.25rem 0;
+  padding: 0;
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.25rem;
+  background: var(--astropaper-code-block-bg);
+  color: var(--astropaper-code-fg);
+  font-family: var(--apaper-font) !important;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+#write pre.md-fences .CodeMirror,
+#write pre.md-fences .CodeMirror-scroll {
+  background: var(--astropaper-code-block-bg);
+  color: var(--astropaper-code-fg);
+  font-family: var(--apaper-font) !important;
+  font-size: inherit;
+  line-height: 1.5;
+}
+
+#write pre.md-fences .CodeMirror-lines {
+  padding: 0.7rem 0;
+}
+
+#write pre.md-fences .CodeMirror pre {
+  margin: 0;
+  padding: 0 1rem;
+  color: var(--astropaper-code-fg);
+  font-family: var(--apaper-font) !important;
+  font-size: inherit;
+  line-height: 1.5;
+}
+
+#write pre.md-fences .CodeMirror-gutters {
+  border-right: 1px solid var(--astropaper-border);
+  background: rgba(230, 230, 230, 0.36);
+}
+
+#write pre.md-fences .CodeMirror-linenumber {
+  color: rgba(40, 39, 40, 0.46);
+}
+
+#write pre.md-fences .CodeMirror-activeline-background {
+  background: transparent;
+}
+
+#write pre.md-fences .CodeMirror-focused .CodeMirror-activeline-background {
+  background: var(--astropaper-line-highlight);
+}
+
+#write pre.md-fences .CodeMirror-selected,
+#typora-source .CodeMirror-selected {
+  background: rgba(0, 108, 172, 0.18);
+}
+
+#write pre.md-fences .CodeMirror-cursor,
+#typora-source .CodeMirror-cursor {
+  border-left-color: var(--astropaper-accent);
+}
+
+#write pre.md-fences .code-tooltip {
+  right: 0.5rem;
+  top: 0.35rem;
+}
+
+#write pre.md-fences .code-tooltip .mode {
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.2rem;
+  background: var(--astropaper-bg);
+  color: rgba(40, 39, 40, 0.72);
+  font-family: var(--apaper-font) !important;
+  font-size: 0.78rem;
+}
+
+#write .md-inline-math,
+#write .md-inline-math-container {
+  color: var(--astropaper-fg);
+}
+
+#write .md-inline-math {
+  padding: 0.04rem 0.16rem;
+  border-radius: 0.2rem;
+  background: rgba(0, 108, 172, 0.08);
+}
+
+#write .md-inline-math .md-meta,
+#write .md-math-after-sym {
+  color: rgba(0, 108, 172, 0.52);
+}
+
+#write .inline-math-svg,
+#write .MathJax_SVG,
+#write .MathJax {
+  color: currentColor;
+}
+
+#write .md-math-block,
+#write .mathjax-block,
+#write .md-mathjax-panel,
+#write pre.md-fences.md-fences-math {
+  margin: 1.25rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.25rem;
+  background: rgba(230, 230, 230, 0.22);
+  color: var(--astropaper-fg);
+  overflow-x: auto;
+}
+
+#write .md-math-block .MathJax_Display,
+#write .mathjax-block .MathJax_Display {
+  margin: 0;
+}
+
+#write .md-mathjax-input,
+#write .md-mathjax-preview,
+#write .mathjax-candidate {
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+}
+
+#write .md-mathjax-midline,
+#write .md-mathjax-hint {
+  color: rgba(40, 39, 40, 0.62);
+}
+
+.md-mathjax-tooltip,
+#math-inline-preview {
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.25rem;
+  background: var(--astropaper-bg);
+  color: var(--astropaper-fg);
+  box-shadow: 0 0.5rem 1.5rem rgba(40, 39, 40, 0.12);
+}
+
+.md-mathjax-tooltip .btn,
+#math-inline-preview .code-tooltip-content {
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+}
+
+.cm-s-inner .cm-keyword,
+.cm-s-typora-default .cm-keyword {
+  color: #cf222e;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-number,
+.cm-s-typora-default .cm-atom,
+.cm-s-typora-default .cm-number {
+  color: #953800;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-variable,
+.cm-s-typora-default .cm-def,
+.cm-s-typora-default .cm-variable {
+  color: #24292f;
+}
+
+.cm-s-inner .cm-property,
+.cm-s-typora-default .cm-property {
+  color: #0550ae;
+}
+
+.cm-s-inner .cm-string,
+.cm-s-typora-default .cm-string {
+  color: #0a3069;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-typora-default .cm-comment {
+  color: #6e7781;
+  font-style: italic;
+}
+
+.cm-s-inner .cm-tag,
+.cm-s-typora-default .cm-tag {
+  color: #116329;
+}
+
+.cm-s-inner .cm-attribute,
+.cm-s-typora-default .cm-attribute {
+  color: #8250df;
+}
+
+.cm-s-inner .cm-operator,
+.cm-s-typora-default .cm-operator {
+  color: #57606a;
+}
+
+.cm-s-inner .cm-builtin,
+.cm-s-typora-default .cm-builtin {
+  color: #8250df;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-typora-default .cm-meta {
+  color: #6e7781;
+}
+
+.cm-s-inner .cm-bracket,
+.cm-s-typora-default .cm-bracket {
+  color: #57606a;
+}
+
+pre.md-meta-block {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--astropaper-border);
+  border-left: 0.22rem solid rgba(0, 108, 172, 0.72);
+  background: rgba(230, 230, 230, 0.35);
+  color: rgba(40, 39, 40, 0.68);
+  font-family: var(--apaper-font) !important;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.md-meta,
+.md-content,
+.md-def-name,
+.md-def-split {
+  color: var(--md-char-color);
+}
+
+mark,
+#write [md-inline="highlight"] mark {
+  padding: 0.04rem 0.22rem;
+  border-radius: 0.18rem;
+  background: rgba(0, 108, 172, 0.14);
+  color: var(--astropaper-fg);
+}
+
+#write [md-inline="highlight"] .md-meta {
+  color: rgba(0, 108, 172, 0.48);
+}
+
+del {
+  color: rgba(40, 39, 40, 0.55);
+}
+
+sup,
+sub {
+  line-height: 0;
+}
+
+.md-footnote {
+  padding: 0.05rem 0.28rem;
+  border-radius: 0.2rem;
+  background: rgba(0, 108, 172, 0.1);
+  color: var(--astropaper-accent);
+  font-size: 0.82em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.md-def-footnote,
+.md-def-link {
+  padding: 0.7rem 1rem;
+  border: 1px dashed var(--astropaper-border);
+  border-radius: 0.25rem;
+  background: rgba(230, 230, 230, 0.28);
+  color: rgba(40, 39, 40, 0.78);
+}
+
+.md-def-footnote .md-def-name,
+.md-def-link .md-def-name {
+  color: var(--astropaper-accent);
+  font-weight: 700;
+}
+
+.md-def-footnote .md-def-content,
+.md-def-link .md-def-content,
+.md-def-url {
+  color: var(--astropaper-fg);
+}
+
+.footnotes,
+.footnotes-area {
+  color: rgba(40, 39, 40, 0.76);
+  font-size: 0.9rem;
+}
+
+.footnote-line {
+  margin-top: 0.55rem;
+}
+
+.footnote-line a:not(.reversefootnote) {
+  color: inherit;
+}
+
+.md-toc {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.25rem;
+  background: rgba(230, 230, 230, 0.24);
+  font-size: 0.92rem;
+}
+
+.md-toc-content {
+  margin-bottom: 0;
+}
+
+.md-toc-item {
+  display: block;
+  margin: 0.12rem 0;
+}
+
+.md-toc-inner {
+  color: var(--astropaper-fg);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.md-toc-inner:hover {
+  color: var(--astropaper-accent);
+  text-decoration: underline;
+}
+
+.md-toc-h1 .md-toc-inner {
+  font-weight: 700;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left: 1.25rem;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2.5rem;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3.75rem;
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left: 5rem;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left: 6.25rem;
+  color: rgba(40, 39, 40, 0.72);
+}
+
+.md-toc-tooltip,
+.md-delete-toc {
+  color: rgba(40, 39, 40, 0.62);
+  font-family: var(--apaper-font) !important;
+}
+
+.task-list {
+  padding-left: 0;
+}
+
+.task-list-item {
+  padding-left: 1.8rem;
+  list-style: none;
+}
+
+.task-list-item input {
+  position: relative;
+  top: 0.2rem;
+  margin-left: -1.55rem;
+}
+
+.task-list-item input::before {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.2rem;
+  background: var(--astropaper-bg);
+}
+
+.task-list-done input::before {
+  border-color: var(--astropaper-accent);
+  background: var(--astropaper-accent);
+}
+
+.task-list-done input::after {
+  content: "";
+  position: absolute;
+  left: 0.28rem;
+  top: 0.08rem;
+  width: 0.34rem;
+  height: 0.58rem;
+  border: solid var(--astropaper-bg);
+  border-width: 0 0.12rem 0.12rem 0;
+  transform: rotate(40deg);
+}
+
+.task-list-done p {
+  color: rgba(40, 39, 40, 0.66);
+  text-decoration: line-through;
+  text-decoration-color: rgba(0, 108, 172, 0.5);
+}
+
+.mathjax-block {
+  color: var(--astropaper-fg);
+}
+
+#write .md-diagram-panel,
+#write pre.md-fences.md-fences-advanced {
+  margin: 1.25rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.25rem;
+  background: rgba(230, 230, 230, 0.22);
+  color: var(--astropaper-fg);
+  overflow-x: auto;
+}
+
+#write .md-diagram-panel-header,
+#write .md-diagram-panel-error {
+  color: rgba(40, 39, 40, 0.68);
+  font-family: var(--apaper-font) !important;
+  font-size: 0.86rem;
+}
+
+#write .md-diagram-panel-error {
+  padding: 0.6rem 0.75rem;
+  border-left: 0.18rem solid var(--astropaper-accent);
+  background: rgba(0, 108, 172, 0.08);
+}
+
+#write .md-diagram-panel-preview,
+#write .md-diagram-panel > svg,
+#write [lang="flow"] svg,
+#write [lang="mermaid"] svg,
+#write [lang="sequence"] svg {
+  max-width: 100%;
+  height: auto;
+}
+
+#write .md-diagram-panel svg,
+#write [lang="flow"] svg,
+#write [lang="mermaid"] svg,
+#write [lang="sequence"] svg {
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+}
+
+#write [lang="mermaid"] .node text,
+#write .md-diagram-panel .messageText,
+#write .md-diagram-panel .label,
+#write .md-diagram-panel text {
+  fill: var(--astropaper-fg) !important;
+  stroke: none !important;
+  font-family: var(--apaper-font) !important;
+}
+
+#write [lang="mermaid"] .node rect,
+#write [lang="mermaid"] .node circle,
+#write [lang="mermaid"] .node ellipse,
+#write [lang="mermaid"] .node polygon,
+#write .md-diagram-panel .node rect,
+#write .md-diagram-panel .node circle,
+#write .md-diagram-panel .node ellipse,
+#write .md-diagram-panel .node polygon,
+#write .md-diagram-panel .start-state {
+  fill: rgba(230, 230, 230, 0.55) !important;
+  stroke: rgba(0, 108, 172, 0.58) !important;
+}
+
+#write .md-diagram-panel .edgePath .path,
+#write .md-diagram-panel .flowchart-link,
+#write [lang="mermaid"] .edgePath .path,
+#write [lang="mermaid"] .flowchart-link {
+  stroke: rgba(40, 39, 40, 0.72) !important;
+}
+
+#write .md-diagram-panel .edgeLabel rect,
+#write [lang="mermaid"] .edgeLabel rect,
+#write .md-diagram-panel .cluster rect {
+  fill: var(--astropaper-bg) !important;
+  stroke: var(--astropaper-border) !important;
+  opacity: 1 !important;
+}
+
+.md-focus,
+.md-focus-container {
+  color: var(--astropaper-fg);
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) {
+  opacity: 0.42;
+}
+
+#typora-source {
+  background: var(--astropaper-bg);
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+}
+
+#typora-source .CodeMirror,
+#typora-source .CodeMirror-scroll {
+  background: var(--astropaper-bg);
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+}
+
+.cm-s-typora-default,
+.cm-s-typora-default pre,
+.cm-s-typora-default span {
+  font-family: var(--apaper-font) !important;
+}
+
+#typora-source .cm-header {
+  color: var(--astropaper-fg);
+  font-weight: 700;
+}
+
+.cm-s-typora-default pre.cm-header1:not(.cm-atom),
+.cm-s-typora-default pre.cm-header1:not(.cm-atom) *:not(.cm-overlay) {
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+.cm-s-typora-default pre.cm-header2:not(.cm-atom),
+.cm-s-typora-default pre.cm-header2:not(.cm-atom) *:not(.cm-overlay) {
+  font-size: 1.7rem;
+  line-height: 1.25;
+}
+
+.cm-s-typora-default pre.cm-header3:not(.cm-atom),
+.cm-s-typora-default pre.cm-header3:not(.cm-atom) *:not(.cm-overlay) {
+  font-size: 1.38rem;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.cm-s-typora-default pre.cm-header4:not(.cm-atom),
+.cm-s-typora-default pre.cm-header4:not(.cm-atom) *:not(.cm-overlay) {
+  font-size: 1.16rem;
+  line-height: 1.35;
+}
+
+.cm-s-typora-default pre.cm-header5:not(.cm-atom),
+.cm-s-typora-default pre.cm-header5:not(.cm-atom) *:not(.cm-overlay) {
+  font-size: 1rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.cm-s-typora-default pre.cm-header6:not(.cm-atom),
+.cm-s-typora-default pre.cm-header6:not(.cm-atom) *:not(.cm-overlay) {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+#typora-source .cm-header-3,
+.cm-s-typora-default .cm-header3 {
+  font-style: italic;
+}
+
+#typora-source .cm-strong {
+  color: var(--astropaper-fg);
+  font-weight: 700;
+}
+
+#typora-source .cm-em {
+  color: var(--astropaper-fg);
+  font-style: italic;
+}
+
+#typora-source .cm-link,
+#typora-source .cm-url {
+  color: var(--astropaper-accent);
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 0.22em;
+}
+
+#typora-source .cm-comment {
+  border-radius: 0.22rem;
+  background: var(--astropaper-code-bg);
+  color: var(--astropaper-fg);
+}
+
+.cm-s-typora-default pre.cm-atom {
+  color: rgba(40, 39, 40, 0.78);
+}
+
+.cm-s-typora-default .cm-block-start.cm-atom {
+  color: var(--astropaper-accent);
+  font-weight: 700;
+}
+
+.cm-s-typora-default .cm-variable-2,
+.cm-s-typora-default .cm-block-start.cm-variable-2 {
+  color: var(--astropaper-accent);
+}
+
+.cm-s-typora-default .cm-formatting-task {
+  border-radius: 0.18rem;
+  color: var(--astropaper-accent);
+  font-weight: 700;
+}
+
+.cm-s-typora-default .cm-table-row {
+  color: rgba(40, 39, 40, 0.78);
+}
+
+.cm-s-typora-default .cm-table-row .cm-operator,
+.cm-s-typora-default .cm-table-row .cm-meta {
+  color: var(--astropaper-accent);
+}
+
+.sidebar,
+#typora-sidebar,
+.typora-node #typora-sidebar,
+.typora-node.pin-outline:not(.megamenu-opened):not(.typora-sourceview-on) #typora-sidebar {
+  background: var(--side-bar-bg-color);
+  border-right: var(--window-border);
+  color: var(--astropaper-fg);
+}
+
+.file-list-item,
+.outline-item {
+  color: var(--astropaper-fg);
+}
+
+.file-list-item:hover,
+.outline-item:hover,
+.menu-item-container:hover {
+  background: var(--item-hover-bg-color);
+  color: var(--item-hover-text-color);
+}
+
+.file-list-item.active,
+.outline-item-active {
+  border-left: 2px solid var(--active-file-border-color);
+  background: var(--active-file-bg-color);
+  color: var(--active-file-text-color);
+}
+
+.btn,
+.btn-default,
+button {
+  border-color: var(--astropaper-border);
+  background: var(--astropaper-bg);
+  color: var(--astropaper-fg);
+}
+
+.btn-primary {
+  border-color: var(--primary-btn-border-color);
+  background: var(--primary-color);
+  color: var(--primary-btn-text-color);
+}
+
+.modal-content,
+.popover,
+.context-menu,
+#md-searchpanel,
+#typora-quick-open {
+  border-color: var(--astropaper-border);
+  background: var(--astropaper-bg);
+  color: var(--astropaper-fg);
+}
+
+.searchpanel-search-option-btn.active,
+.searchpanel-search-option-btn:hover {
+  color: var(--astropaper-accent);
+}
+
+@media print {
+  html,
+  body,
+  #write {
+    background: #ffffff;
+    color: #282728;
+  }
+
+  #write {
+    max-width: none;
+    padding: 0;
+  }
+
+  #write a {
+    color: #282728;
+    text-decoration-color: #282728;
+  }
+
+  #write h1,
+  #write h2,
+  #write h3,
+  #write h4,
+  #write h5,
+  #write h6,
+  #write img,
+  #write table,
+  #write blockquote,
+  #write .md-math-block,
+  #write .mathjax-block,
+  #write .md-diagram-panel,
+  #write pre.md-fences {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  #write blockquote,
+  #write .md-toc,
+  #write .md-def-footnote,
+  #write .md-def-link,
+  #write .md-math-block,
+  #write .mathjax-block,
+  #write .md-mathjax-panel,
+  #write .md-diagram-panel,
+  #write pre.md-fences.md-fences-advanced,
+  pre.md-meta-block {
+    background: #ffffff;
+    color: #282728;
+  }
+
+  #write th,
+  #write tr:nth-child(even) td {
+    background: #f4f4f4;
+  }
+
+  #write .md-image img,
+  #write img {
+    max-height: 90vh;
+  }
+
+  pre.md-fences,
+  pre.md-meta-block,
+  #write code,
+  #write table,
+  #write blockquote,
+  #write .md-toc,
+  #write .md-def-footnote,
+  #write .md-def-link,
+  #write .md-math-block,
+  #write .mathjax-block,
+  #write .md-diagram-panel,
+  #write img {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #212737;
+    --text-color: #eaedf3;
+    --md-char-color: rgba(234, 237, 243, 0.42);
+    --meta-content-color: rgba(234, 237, 243, 0.64);
+    --primary-color: #ff6b01;
+    --primary-btn-border-color: #ff6b01;
+    --primary-btn-text-color: #212737;
+    --window-border: 1px solid #ab4b08;
+    --active-file-bg-color: #343f60;
+    --active-file-text-color: #eaedf3;
+    --active-file-border-color: #ff6b01;
+    --side-bar-bg-color: #212737;
+    --item-hover-bg-color: rgba(52, 63, 96, 0.72);
+    --item-hover-text-color: #eaedf3;
+
+    --astropaper-bg: #212737;
+    --astropaper-fg: #eaedf3;
+    --astropaper-accent: #ff6b01;
+    --astropaper-muted: #343f60;
+    --astropaper-border: #ab4b08;
+    --astropaper-code-bg: rgba(52, 63, 96, 0.75);
+    --astropaper-code-block-bg: #011627;
+    --astropaper-code-fg: #d6deeb;
+    --astropaper-line-highlight: rgba(148, 163, 184, 0.18);
+    --astropaper-selection: rgba(255, 107, 1, 0.78);
+  }
+
+  #write h6,
+  #write blockquote,
+  del,
+  pre.md-meta-block,
+  #write pre.md-fences .CodeMirror-linenumber {
+    color: rgba(234, 237, 243, 0.72);
+  }
+
+  #write [md-inline="strong"] .md-meta,
+  #write [md-inline="em"] .md-meta,
+  #write [md-inline="link"] .md-meta,
+  #write [md-inline="link"] .md-content,
+  #write .md-image .md-meta,
+  #write .md-image .md-content,
+  #write [md-inline="highlight"] .md-meta {
+    color: rgba(255, 107, 1, 0.68);
+  }
+
+  #write [md-inline="code"] .md-meta {
+    color: rgba(234, 237, 243, 0.5);
+  }
+
+  .task-list-done p {
+    color: rgba(234, 237, 243, 0.62);
+    text-decoration-color: rgba(255, 107, 1, 0.58);
+  }
+
+  #write th {
+    background: rgba(52, 63, 96, 0.52);
+  }
+
+  #write tr:nth-child(even) td,
+  #write blockquote,
+  #write .md-img-error,
+  #write .md-math-block,
+  #write .mathjax-block,
+  #write .md-mathjax-panel,
+  #write pre.md-fences.md-fences-math,
+  #write .md-diagram-panel,
+  #write pre.md-fences.md-fences-advanced,
+  .md-toc,
+  .md-def-footnote,
+  .md-def-link,
+  pre.md-meta-block {
+    background: rgba(52, 63, 96, 0.32);
+  }
+
+  #write .md-image,
+  .md-def-footnote,
+  .md-def-link,
+  .footnotes,
+  .footnotes-area,
+  .md-toc-h6 .md-toc-inner,
+  .md-toc-tooltip,
+  .md-delete-toc {
+    color: rgba(234, 237, 243, 0.72);
+  }
+
+  .md-footnote {
+    background: rgba(255, 107, 1, 0.14);
+  }
+
+  #write .md-inline-math {
+    background: rgba(255, 107, 1, 0.12);
+  }
+
+  #write .md-inline-math .md-meta,
+  #write .md-math-after-sym {
+    color: rgba(255, 107, 1, 0.68);
+  }
+
+  #write .md-mathjax-midline,
+  #write .md-mathjax-hint,
+  #write .md-diagram-panel-header,
+  #write .md-diagram-panel-error {
+    color: rgba(234, 237, 243, 0.68);
+  }
+
+  #write .md-diagram-panel-error {
+    background: rgba(255, 107, 1, 0.12);
+  }
+
+  #write [lang="mermaid"] .node rect,
+  #write [lang="mermaid"] .node circle,
+  #write [lang="mermaid"] .node ellipse,
+  #write [lang="mermaid"] .node polygon,
+  #write .md-diagram-panel .node rect,
+  #write .md-diagram-panel .node circle,
+  #write .md-diagram-panel .node ellipse,
+  #write .md-diagram-panel .node polygon,
+  #write .md-diagram-panel .start-state {
+    fill: rgba(52, 63, 96, 0.74) !important;
+    stroke: rgba(255, 107, 1, 0.62) !important;
+  }
+
+  #write .md-diagram-panel .edgePath .path,
+  #write .md-diagram-panel .flowchart-link,
+  #write [lang="mermaid"] .edgePath .path,
+  #write [lang="mermaid"] .flowchart-link {
+    stroke: rgba(234, 237, 243, 0.72) !important;
+  }
+
+  #write pre.md-fences .CodeMirror-gutters {
+    background: rgba(52, 63, 96, 0.4);
+  }
+
+  #write pre.md-fences .CodeMirror-selected,
+  #typora-source .CodeMirror-selected {
+    background: rgba(255, 107, 1, 0.18);
+  }
+
+  #write pre.md-fences .code-tooltip .mode {
+    border-color: var(--astropaper-border);
+    background: var(--astropaper-bg);
+    color: rgba(234, 237, 243, 0.72);
+  }
+
+  .cm-s-inner .cm-keyword,
+  .cm-s-typora-default .cm-keyword {
+    color: #c792ea;
+  }
+
+  .cm-s-inner .cm-atom,
+  .cm-s-inner .cm-number,
+  .cm-s-typora-default .cm-atom,
+  .cm-s-typora-default .cm-number {
+    color: #f78c6c;
+  }
+
+  .cm-s-inner .cm-def,
+  .cm-s-inner .cm-variable,
+  .cm-s-typora-default .cm-def,
+  .cm-s-typora-default .cm-variable {
+    color: #d6deeb;
+  }
+
+  .cm-s-inner .cm-property,
+  .cm-s-typora-default .cm-property {
+    color: #82aaff;
+  }
+
+  .cm-s-inner .cm-string,
+  .cm-s-typora-default .cm-string {
+    color: #ecc48d;
+  }
+
+  .cm-s-inner .cm-comment,
+  .cm-s-typora-default .cm-comment {
+    color: #637777;
+  }
+
+  .cm-s-inner .cm-tag,
+  .cm-s-typora-default .cm-tag {
+    color: #7fdbca;
+  }
+
+  .cm-s-inner .cm-attribute,
+  .cm-s-typora-default .cm-attribute {
+    color: #addb67;
+  }
+
+  .cm-s-inner .cm-operator,
+  .cm-s-typora-default .cm-operator {
+    color: #89ddff;
+  }
+
+  .cm-s-inner .cm-builtin,
+  .cm-s-typora-default .cm-builtin {
+    color: #c792ea;
+  }
+
+  .cm-s-inner .cm-meta,
+  .cm-s-typora-default .cm-meta,
+  .cm-s-inner .cm-bracket,
+  .cm-s-typora-default .cm-bracket {
+    color: #7f8c98;
+  }
+}
