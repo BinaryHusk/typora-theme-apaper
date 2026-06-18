@@ -33,8 +33,13 @@
   --astropaper-code-bg: rgba(230, 230, 230, 0.75);
   --astropaper-code-block-bg: #f6f8fa;
   --astropaper-code-fg: #24292f;
+  --astropaper-rawblock-bg: rgba(230, 230, 230, 0.28);
+  --astropaper-rawblock-hover-bg: rgba(230, 230, 230, 0.45);
   --astropaper-line-highlight: rgba(148, 163, 184, 0.2);
   --astropaper-selection: rgba(0, 108, 172, 0.75);
+  --apaper-code-font-size: 14px;
+  --apaper-code-line-height: 22px;
+  --rawblock-edit-panel-bd: var(--astropaper-rawblock-hover-bg);
 }
 
 html {
@@ -367,8 +372,8 @@ tt {
   background: var(--astropaper-code-block-bg);
   color: var(--astropaper-code-fg);
   font-family: var(--apaper-font) !important;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: var(--apaper-code-font-size);
+  line-height: var(--apaper-code-line-height);
   overflow: hidden;
 }
 
@@ -377,21 +382,25 @@ tt {
   background: var(--astropaper-code-block-bg);
   color: var(--astropaper-code-fg);
   font-family: var(--apaper-font) !important;
-  font-size: inherit;
-  line-height: 1.5;
+  font-size: var(--apaper-code-font-size);
+  line-height: var(--apaper-code-line-height);
 }
 
 #write pre.md-fences .CodeMirror-lines {
-  padding: 0.7rem 0;
+  padding: 0.75rem 0;
 }
 
+#write pre.md-fences .CodeMirror-code > div,
+#write pre.md-fences .CodeMirror-line,
+#write pre.md-fences pre.CodeMirror-line,
 #write pre.md-fences .CodeMirror pre {
+  min-height: var(--apaper-code-line-height);
   margin: 0;
   padding: 0 1rem;
   color: var(--astropaper-code-fg);
   font-family: var(--apaper-font) !important;
-  font-size: inherit;
-  line-height: 1.5;
+  font-size: var(--apaper-code-font-size);
+  line-height: var(--apaper-code-line-height) !important;
 }
 
 #write pre.md-fences .CodeMirror-gutters {
@@ -401,6 +410,7 @@ tt {
 
 #write pre.md-fences .CodeMirror-linenumber {
   color: rgba(40, 39, 40, 0.46);
+  line-height: var(--apaper-code-line-height);
 }
 
 #write pre.md-fences .CodeMirror-activeline-background {
@@ -421,6 +431,10 @@ tt {
   border-left-color: var(--astropaper-accent);
 }
 
+#write pre.md-fences .CodeMirror div.CodeMirror-cursor {
+  height: var(--apaper-code-line-height) !important;
+}
+
 #write pre.md-fences .code-tooltip {
   right: 0.5rem;
   top: 0.35rem;
@@ -433,6 +447,103 @@ tt {
   color: rgba(40, 39, 40, 0.72);
   font-family: var(--apaper-font) !important;
   font-size: 0.78rem;
+}
+
+#write .md-htmlblock,
+#write .md-rawblock {
+  margin: 1.25rem 0;
+  color: var(--astropaper-fg);
+}
+
+#write .md-htmlblock-container,
+#write .md-rawblock-container {
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.25rem;
+  background: var(--astropaper-rawblock-bg);
+  color: var(--astropaper-fg);
+  overflow: hidden;
+}
+
+#write .md-htmlblock-container {
+  padding: 0.75rem 1rem;
+}
+
+#write .md-rawblock-on-edit > .md-rawblock-container,
+#write .md-rawblock:hover > .md-rawblock-container {
+  background: var(--astropaper-rawblock-hover-bg);
+}
+
+#write .md-rawblock-input,
+#write .md-raw-html-src,
+#write .md-raw-html-src-content,
+#write .md-raw-inline,
+#write .md-tag,
+#write .md-html-inline,
+#write .md-html-inline .md-meta {
+  color: rgba(0, 108, 172, 0.72);
+  font-family: var(--apaper-font) !important;
+}
+
+#write .md-rawblock-control:not(.md-rawblock-tooltip) {
+  background: var(--rawblock-edit-panel-bd);
+  color: rgba(40, 39, 40, 0.68);
+}
+
+#write .md-rawblock-tooltip {
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.2rem;
+  background: var(--astropaper-bg);
+  color: rgba(40, 39, 40, 0.72);
+  font-family: var(--apaper-font) !important;
+}
+
+#write .md-rawblock-tooltip-btn:hover {
+  background: var(--item-hover-bg-color);
+  color: var(--astropaper-accent);
+}
+
+#write .md-htmlblock .CodeMirror,
+#write .md-htmlblock .CodeMirror-scroll,
+#write .md-rawblock .CodeMirror,
+#write .md-rawblock .CodeMirror-scroll {
+  background: var(--astropaper-code-block-bg);
+  color: var(--astropaper-code-fg);
+  font-family: var(--apaper-font) !important;
+  font-size: var(--apaper-code-font-size);
+  line-height: var(--apaper-code-line-height);
+}
+
+#write .md-htmlblock .CodeMirror-scroll,
+#write .md-rawblock .CodeMirror-scroll {
+  padding: 0;
+}
+
+#write .md-htmlblock .CodeMirror-lines,
+#write .md-rawblock .CodeMirror-lines {
+  padding: 0.75rem 0;
+}
+
+#write .md-htmlblock .CodeMirror-code > div,
+#write .md-rawblock .CodeMirror-code > div,
+#write .md-htmlblock .CodeMirror-line,
+#write .md-rawblock .CodeMirror-line,
+#write .md-htmlblock pre.CodeMirror-line,
+#write .md-rawblock pre.CodeMirror-line,
+#write .md-htmlblock .CodeMirror pre,
+#write .md-rawblock .CodeMirror pre {
+  min-height: var(--apaper-code-line-height);
+  margin: 0;
+  padding: 0 1rem;
+  color: var(--astropaper-code-fg);
+  font-family: var(--apaper-font) !important;
+  font-size: var(--apaper-code-font-size);
+  line-height: var(--apaper-code-line-height) !important;
+}
+
+#write .md-htmlblock .CodeMirror div.CodeMirror-cursor,
+#write .md-rawblock .CodeMirror div.CodeMirror-cursor {
+  height: var(--apaper-code-line-height) !important;
+  border-left-color: var(--astropaper-accent);
 }
 
 #write .md-inline-math,
@@ -1129,6 +1240,8 @@ button {
     --astropaper-code-bg: rgba(52, 63, 96, 0.75);
     --astropaper-code-block-bg: #011627;
     --astropaper-code-fg: #d6deeb;
+    --astropaper-rawblock-bg: rgba(52, 63, 96, 0.32);
+    --astropaper-rawblock-hover-bg: rgba(52, 63, 96, 0.5);
     --astropaper-line-highlight: rgba(148, 163, 184, 0.18);
     --astropaper-selection: rgba(255, 107, 1, 0.78);
   }
@@ -1147,7 +1260,13 @@ button {
   #write [md-inline="link"] .md-content,
   #write .md-image .md-meta,
   #write .md-image .md-content,
-  #write [md-inline="highlight"] .md-meta {
+  #write [md-inline="highlight"] .md-meta,
+  #write .md-raw-html-src,
+  #write .md-raw-html-src-content,
+  #write .md-raw-inline,
+  #write .md-tag,
+  #write .md-html-inline,
+  #write .md-html-inline .md-meta {
     color: rgba(255, 107, 1, 0.68);
   }
 
@@ -1173,6 +1292,8 @@ button {
   #write pre.md-fences.md-fences-math,
   #write .md-diagram-panel,
   #write pre.md-fences.md-fences-advanced,
+  #write .md-htmlblock-container,
+  #write .md-rawblock-container,
   .md-toc,
   .md-def-footnote,
   .md-def-link,
@@ -1237,6 +1358,11 @@ button {
 
   #write pre.md-fences .CodeMirror-gutters {
     background: rgba(52, 63, 96, 0.4);
+  }
+
+  #write .md-rawblock-control:not(.md-rawblock-tooltip),
+  #write .md-rawblock-tooltip {
+    color: rgba(234, 237, 243, 0.72);
   }
 
   #write pre.md-fences .CodeMirror-selected,
