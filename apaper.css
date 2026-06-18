@@ -392,6 +392,11 @@ tt {
 
 #write pre.md-fences .CodeMirror-code > div,
 #write pre.md-fences .CodeMirror-line,
+#write pre.md-fences pre.CodeMirror-line {
+  min-height: var(--apaper-code-line-height);
+  line-height: var(--apaper-code-line-height) !important;
+}
+
 #write pre.md-fences pre.CodeMirror-line,
 #write pre.md-fences .CodeMirror pre {
   min-height: var(--apaper-code-line-height);
@@ -528,6 +533,12 @@ tt {
 #write .md-htmlblock .CodeMirror-line,
 #write .md-rawblock .CodeMirror-line,
 #write .md-htmlblock pre.CodeMirror-line,
+#write .md-rawblock pre.CodeMirror-line {
+  min-height: var(--apaper-code-line-height);
+  line-height: var(--apaper-code-line-height) !important;
+}
+
+#write .md-htmlblock pre.CodeMirror-line,
 #write .md-rawblock pre.CodeMirror-line,
 #write .md-htmlblock .CodeMirror pre,
 #write .md-rawblock .CodeMirror pre {
@@ -548,18 +559,19 @@ tt {
 
 #write .md-inline-math,
 #write .md-inline-math-container {
-  color: var(--astropaper-fg);
+  color: inherit;
 }
 
 #write .md-inline-math {
-  padding: 0.04rem 0.16rem;
-  border-radius: 0.2rem;
-  background: rgba(0, 108, 172, 0.08);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
 }
 
 #write .md-inline-math .md-meta,
 #write .md-math-after-sym {
-  color: rgba(0, 108, 172, 0.52);
+  color: var(--md-char-color);
 }
 
 #write .inline-math-svg,
@@ -1317,12 +1329,12 @@ button {
   }
 
   #write .md-inline-math {
-    background: rgba(255, 107, 1, 0.12);
+    background: transparent;
   }
 
   #write .md-inline-math .md-meta,
   #write .md-math-after-sym {
-    color: rgba(255, 107, 1, 0.68);
+    color: var(--md-char-color);
   }
 
   #write .md-mathjax-midline,
