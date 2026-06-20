@@ -1,5 +1,5 @@
 /*
- * apaper for Typora
+ * apaper dark for Typora
  * A local editing theme that approximates this workspace's AstroPaper blog.
  */
 
@@ -13,13 +13,13 @@
   --text-color: #282728;
   --md-char-color: rgba(40, 39, 40, 0.42);
   --meta-content-color: rgba(40, 39, 40, 0.64);
-  --primary-color: #006cac;
-  --primary-btn-border-color: #006cac;
+  --primary-color: #ff6b01;
+  --primary-btn-border-color: #ff6b01;
   --primary-btn-text-color: #ffffff;
   --window-border: 1px solid #ece9e9;
   --active-file-bg-color: #e6e6e6;
   --active-file-text-color: #282728;
-  --active-file-border-color: #006cac;
+  --active-file-border-color: #ff6b01;
   --side-bar-bg-color: #fdfdfd;
   --item-hover-bg-color: rgba(230, 230, 230, 0.72);
   --item-hover-text-color: #282728;
@@ -27,7 +27,7 @@
 
   --astropaper-bg: #fdfdfd;
   --astropaper-fg: #282728;
-  --astropaper-accent: #006cac;
+  --astropaper-accent: #ff6b01;
   --astropaper-accent-fg: #ffffff;
   --astropaper-muted: #e6e6e6;
   --astropaper-muted-fg: #6b7280;
@@ -38,7 +38,7 @@
   --astropaper-rawblock-bg: rgba(230, 230, 230, 0.28);
   --astropaper-rawblock-hover-bg: rgba(230, 230, 230, 0.45);
   --astropaper-line-highlight: rgba(148, 163, 184, 0.2);
-  --astropaper-selection: rgba(0, 108, 172, 0.75);
+  --astropaper-selection: rgba(255, 107, 1, 0.75);
   --apaper-code-font-size: 14px;
   --apaper-code-line-height: 22px;
   --rawblock-edit-panel-bd: var(--astropaper-rawblock-hover-bg);
@@ -182,7 +182,7 @@ body {
 }
 
 #write [md-inline="strong"] .md-meta {
-  color: rgba(0, 108, 172, 0.55);
+  color: rgba(255, 107, 1, 0.55);
   font-weight: 600;
 }
 
@@ -194,14 +194,14 @@ body {
 }
 
 #write [md-inline="em"] .md-meta {
-  color: rgba(0, 108, 172, 0.5);
+  color: rgba(255, 107, 1, 0.5);
 }
 
 #write [md-inline="link"] .md-meta,
 #write [md-inline="link"] .md-content,
 #write [md-inline="url"] .md-meta,
 #write [md-inline="url"] .md-content {
-  color: rgba(0, 108, 172, 0.62);
+  color: rgba(255, 107, 1, 0.62);
 }
 
 #write ul,
@@ -235,7 +235,7 @@ body {
   margin-left: 0;
   margin-right: 0;
   padding: 0.7rem 1rem;
-  border-left: 0.22rem solid rgba(0, 108, 172, 0.78);
+  border-left: 0.22rem solid rgba(255, 107, 1, 0.78);
   background: rgba(230, 230, 230, 0.24);
   color: rgba(40, 39, 40, 0.82);
   font-style: normal;
@@ -254,7 +254,7 @@ body {
 }
 
 #write blockquote .md-meta {
-  color: rgba(0, 108, 172, 0.62);
+  color: rgba(255, 107, 1, 0.62);
 }
 
 #write hr {
@@ -291,7 +291,7 @@ body {
 
 #write .md-image .md-meta,
 #write .md-image .md-content {
-  color: rgba(0, 108, 172, 0.56);
+  color: rgba(255, 107, 1, 0.56);
   font-family: var(--apaper-font) !important;
   font-size: 0.84rem;
 }
@@ -300,7 +300,7 @@ body {
   padding: 0.75rem 1rem;
   border: 1px dashed var(--astropaper-border);
   border-radius: 0.25rem;
-  background: rgba(0, 108, 172, 0.06);
+  background: rgba(255, 107, 1, 0.06);
 }
 
 #write table:not(.md-grid-board) {
@@ -335,7 +335,7 @@ body {
 }
 
 #write table:not(.md-grid-board) > thead > tr > th {
-  border-bottom-color: rgba(0, 108, 172, 0.42);
+  border-bottom-color: rgba(255, 107, 1, 0.42);
 }
 
 #write table:not(.md-grid-board) > tbody > tr:nth-child(even) > td,
@@ -460,7 +460,7 @@ tt {
 
 #write pre.md-fences .CodeMirror-selected,
 #typora-source .CodeMirror-selected {
-  background: rgba(0, 108, 172, 0.18);
+  background: rgba(255, 107, 1, 0.18);
 }
 
 #write pre.md-fences .CodeMirror-cursor,
@@ -517,7 +517,7 @@ tt {
 #write .md-tag,
 #write .md-html-inline,
 #write .md-html-inline .md-meta {
-  color: rgba(0, 108, 172, 0.72);
+  color: rgba(255, 107, 1, 0.72);
   font-family: var(--apaper-font) !important;
 }
 
@@ -804,7 +804,7 @@ tt {
 pre.md-meta-block {
   padding: 0.75rem 1rem;
   border: 1px solid var(--astropaper-border);
-  border-left: 0.22rem solid rgba(0, 108, 172, 0.72);
+  border-left: 0.22rem solid rgba(255, 107, 1, 0.72);
   background: rgba(230, 230, 230, 0.35);
   color: rgba(40, 39, 40, 0.68);
   font-family: var(--apaper-font) !important;
@@ -824,12 +824,12 @@ mark,
 #write [md-inline="highlight"] mark {
   padding: 0.04rem 0.22rem;
   border-radius: 0.18rem;
-  background: rgba(0, 108, 172, 0.14);
+  background: rgba(255, 107, 1, 0.14);
   color: var(--astropaper-fg);
 }
 
 #write [md-inline="highlight"] .md-meta {
-  color: rgba(0, 108, 172, 0.48);
+  color: rgba(255, 107, 1, 0.48);
 }
 
 del {
@@ -844,7 +844,7 @@ sub {
 .md-footnote {
   padding: 0.05rem 0.28rem;
   border-radius: 0.2rem;
-  background: rgba(0, 108, 172, 0.1);
+  background: rgba(255, 107, 1, 0.1);
   color: var(--astropaper-accent);
   font-size: 0.82em;
   font-weight: 700;
@@ -990,7 +990,7 @@ sub {
 .task-list-done p {
   color: rgba(40, 39, 40, 0.66);
   text-decoration: line-through;
-  text-decoration-color: rgba(0, 108, 172, 0.5);
+  text-decoration-color: rgba(255, 107, 1, 0.5);
 }
 
 .mathjax-block {
@@ -1018,7 +1018,7 @@ sub {
 #write .md-diagram-panel-error {
   padding: 0.6rem 0.75rem;
   border-left: 0.18rem solid var(--astropaper-accent);
-  background: rgba(0, 108, 172, 0.08);
+  background: rgba(255, 107, 1, 0.08);
 }
 
 #write .md-diagram-panel-preview,
@@ -1057,7 +1057,7 @@ sub {
 #write .md-diagram-panel .node polygon,
 #write .md-diagram-panel .start-state {
   fill: rgba(230, 230, 230, 0.55) !important;
-  stroke: rgba(0, 108, 172, 0.58) !important;
+  stroke: rgba(255, 107, 1, 0.58) !important;
 }
 
 #write .md-diagram-panel .edgePath .path,
@@ -1338,4 +1338,234 @@ button {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+}
+
+/* Dark theme overrides mirror AstroPaper official dark mode. */
+:root {
+  /* Mirrors AstroPaper's official dark theme tokens. */
+  --bg-color: #212737;
+  --text-color: #eaedf3;
+  --md-char-color: rgba(234, 237, 243, 0.42);
+  --meta-content-color: #afb9ca;
+  --primary-color: #ff6b01;
+  --primary-btn-border-color: #ff6b01;
+  --primary-btn-text-color: #ffffff;
+  --window-border: 1px solid #ab4b08;
+  --active-file-bg-color: #343f60;
+  --active-file-text-color: #eaedf3;
+  --active-file-border-color: #ff6b01;
+  --side-bar-bg-color: #212737;
+  --item-hover-bg-color: rgba(52, 63, 96, 0.72);
+  --item-hover-text-color: #eaedf3;
+
+  --astropaper-bg: #212737;
+  --astropaper-fg: #eaedf3;
+  --astropaper-accent: #ff6b01;
+  --astropaper-accent-fg: #ffffff;
+  --astropaper-muted: #343f60;
+  --astropaper-muted-fg: #afb9ca;
+  --astropaper-border: #ab4b08;
+  --astropaper-code-bg: rgba(52, 63, 96, 0.75);
+  --astropaper-code-block-bg: #011627;
+  --astropaper-code-fg: #d6deeb;
+  --astropaper-rawblock-bg: rgba(52, 63, 96, 0.32);
+  --astropaper-rawblock-hover-bg: rgba(52, 63, 96, 0.5);
+  --astropaper-line-highlight: rgba(52, 63, 96, 0.68);
+  --astropaper-selection: rgba(255, 107, 1, 0.75);
+}
+
+#write h6,
+#write blockquote,
+del,
+pre.md-meta-block,
+#write pre.md-fences .CodeMirror-linenumber {
+  color: rgba(234, 237, 243, 0.72);
+}
+
+#write [md-inline="strong"] .md-meta,
+#write [md-inline="em"] .md-meta,
+#write [md-inline="link"] .md-meta,
+#write [md-inline="link"] .md-content,
+#write .md-image .md-meta,
+#write .md-image .md-content,
+#write [md-inline="highlight"] .md-meta,
+#write .md-raw-html-src,
+#write .md-raw-html-src-content,
+#write .md-raw-inline,
+#write .md-tag,
+#write .md-html-inline,
+#write .md-html-inline .md-meta {
+  color: rgba(255, 107, 1, 0.68);
+}
+
+#write [md-inline="code"] .md-meta {
+  color: rgba(234, 237, 243, 0.5);
+}
+
+.cm-s-typora-default pre.cm-atom,
+.cm-s-typora-default .cm-table-row {
+  color: rgba(234, 237, 243, 0.78);
+}
+
+.task-list-done p {
+  color: rgba(234, 237, 243, 0.62);
+  text-decoration-color: rgba(255, 107, 1, 0.58);
+}
+
+#write table:not(.md-grid-board) > thead > tr > th,
+#write table:not(.md-grid-board) > tbody > tr > th,
+#write table:not(.md-grid-board) > tfoot > tr > th,
+#write table:not(.md-grid-board) > tr > th {
+  background: rgba(52, 63, 96, 0.52);
+}
+
+#write table:not(.md-grid-board) > tbody > tr:nth-child(even) > td,
+#write table:not(.md-grid-board) > tr:nth-child(even) > td,
+#write blockquote,
+#write .md-img-error,
+#write .md-diagram-panel,
+#write pre.md-fences.md-fences-advanced,
+#write .md-htmlblock-container,
+#write .md-rawblock-container,
+.md-toc,
+.md-def-footnote,
+.md-def-link,
+pre.md-meta-block {
+  background: rgba(52, 63, 96, 0.32);
+}
+
+#write .md-image,
+.md-def-footnote,
+.md-def-link,
+.footnotes,
+.footnotes-area,
+.md-toc-h6 .md-toc-inner,
+.md-toc-tooltip,
+.md-delete-toc {
+  color: rgba(234, 237, 243, 0.72);
+}
+
+.md-footnote {
+  background: rgba(255, 107, 1, 0.14);
+}
+
+#write .md-inline-math {
+  background: transparent;
+}
+
+#write .md-inline-math .md-meta,
+#write .md-math-after-sym {
+  color: var(--md-char-color);
+}
+
+#write .md-mathjax-midline,
+#write .md-mathjax-hint,
+#write .md-diagram-panel-header,
+#write .md-diagram-panel-error {
+  color: rgba(234, 237, 243, 0.68);
+}
+
+#write .md-diagram-panel-error {
+  background: rgba(255, 107, 1, 0.12);
+}
+
+#write [lang="mermaid"] .node rect,
+#write [lang="mermaid"] .node circle,
+#write [lang="mermaid"] .node ellipse,
+#write [lang="mermaid"] .node polygon,
+#write .md-diagram-panel .node rect,
+#write .md-diagram-panel .node circle,
+#write .md-diagram-panel .node ellipse,
+#write .md-diagram-panel .node polygon,
+#write .md-diagram-panel .start-state {
+  fill: rgba(52, 63, 96, 0.74) !important;
+  stroke: rgba(255, 107, 1, 0.62) !important;
+}
+
+#write .md-diagram-panel .edgePath .path,
+#write .md-diagram-panel .flowchart-link,
+#write [lang="mermaid"] .edgePath .path,
+#write [lang="mermaid"] .flowchart-link {
+  stroke: rgba(234, 237, 243, 0.72) !important;
+}
+
+#write pre.md-fences .CodeMirror-gutters {
+  background: rgba(52, 63, 96, 0.4);
+}
+
+#write .md-rawblock-control:not(.md-rawblock-tooltip),
+#write .md-rawblock-tooltip {
+  color: rgba(234, 237, 243, 0.72);
+}
+
+#write pre.md-fences .CodeMirror-selected,
+#typora-source .CodeMirror-selected {
+  background: rgba(255, 107, 1, 0.18);
+}
+
+#write pre.md-fences .code-tooltip .mode {
+  border-color: var(--astropaper-border);
+  background: var(--astropaper-bg);
+  color: rgba(234, 237, 243, 0.72);
+}
+
+.cm-s-inner .cm-keyword,
+.cm-s-typora-default .cm-keyword {
+  color: #c792ea;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-number,
+.cm-s-typora-default .cm-atom,
+.cm-s-typora-default .cm-number {
+  color: #f78c6c;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-variable,
+.cm-s-typora-default .cm-def,
+.cm-s-typora-default .cm-variable {
+  color: #d6deeb;
+}
+
+.cm-s-inner .cm-property,
+.cm-s-typora-default .cm-property {
+  color: #82aaff;
+}
+
+.cm-s-inner .cm-string,
+.cm-s-typora-default .cm-string {
+  color: #ecc48d;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-typora-default .cm-comment {
+  color: #637777;
+}
+
+.cm-s-inner .cm-tag,
+.cm-s-typora-default .cm-tag {
+  color: #7fdbca;
+}
+
+.cm-s-inner .cm-attribute,
+.cm-s-typora-default .cm-attribute {
+  color: #addb67;
+}
+
+.cm-s-inner .cm-operator,
+.cm-s-typora-default .cm-operator {
+  color: #89ddff;
+}
+
+.cm-s-inner .cm-builtin,
+.cm-s-typora-default .cm-builtin {
+  color: #c792ea;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-typora-default .cm-meta,
+.cm-s-inner .cm-bracket,
+.cm-s-typora-default .cm-bracket {
+  color: #7f8c98;
 }

@@ -20,29 +20,40 @@
 
 ## Preview
 
-<div align="center">
-  <img src="images/apaper-writing-overview.png" alt="Apaper writing overview" width="82%">
-</div>
+| Light | Dark |
+| :--: | :--: |
+| <img src="images/apaper-writing-overview.png" alt="Apaper writing overview" width="100%"> | <img src="images/apaper-dark-writing-overview.png" alt="Apaper Dark writing overview" width="100%"> |
 
 ## Features
 
 - Matches the visual rhythm of an AstroPaper-based technical blog.
 - Uses a compact, text-first layout for long-form Markdown editing.
 - Covers headings, lists, blockquotes, tables, code fences, math, diagrams, raw HTML blocks, TOC, footnotes, and YAML front matter.
-- Includes light and dark color schemes through Typora's system color mode.
+- Provides separate Apaper and Apaper Dark theme files, so dark mode can be selected without changing the system color mode.
 - Bundles Maple Mono CN for consistent Chinese and English text rendering.
 
 ## Installation
 
 1. Download this repository or the latest release archive.
 2. In Typora, open **Preferences** > **Appearance** > **Open Theme Folder**.
-3. Copy `apaper.css` and the `apaper` folder into Typora's theme folder.
-4. Restart Typora and select **Apaper** from the theme menu.
+3. Copy `apaper.css`, `apaper-dark.css`, and the `apaper` folder into Typora's theme folder.
+4. Restart Typora and select **Apaper** or **Apaper Dark** from the theme menu.
+
+## Theme Selection
+
+| System or App Appearance | Typora Theme |
+| :-- | :-- |
+| Light | **Apaper** |
+| Dark | **Apaper Dark** |
+| Keep the system light, but use a dark Typora editor | **Apaper Dark** |
+
+Typora treats `apaper.css` and `apaper-dark.css` as two separate themes, so switch between them from Typora's theme menu when your preferred appearance changes.
 
 ## Files
 
 ```text
 apaper.css
+apaper-dark.css
 apaper/
 └── fonts/
     └── maple-mono-cn/

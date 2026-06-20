@@ -21,29 +21,40 @@
 
 ## 预览
 
-<div align="center">
-  <img src="images/apaper-writing-overview.png" alt="Apaper 写作界面预览" width="82%">
-</div>
+| 亮色 | 暗色 |
+| :--: | :--: |
+| <img src="images/apaper-writing-overview.png" alt="Apaper 写作界面预览" width="100%"> | <img src="images/apaper-dark-writing-overview.png" alt="Apaper Dark 写作界面预览" width="100%"> |
 
 ## 特性
 
 - 贴近 AstroPaper 技术博客的视觉节奏。
 - 采用紧凑、文本优先的布局，适合长篇 Markdown 编辑。
 - 覆盖标题、列表、引用块、表格、代码块、数学公式、图表、原始 HTML 块、目录、脚注和 YAML Front Matter。
-- 通过 Typora 的系统配色模式提供亮色和暗色方案。
+- 提供独立的 Apaper 与 Apaper Dark 主题文件，无需切换系统配色即可在 Typora 中选择暗色主题。
 - 内置 Maple Mono CN，保持中英文文本渲染一致。
 
 ## 安装
 
 1. 下载本仓库，或下载最新的 Release 压缩包。
 2. 在 Typora 中打开 **偏好设置** > **外观** > **打开主题文件夹**。
-3. 将 `apaper.css` 和 `apaper` 文件夹复制到 Typora 主题文件夹。
-4. 重启 Typora，并在主题菜单中选择 **Apaper**。
+3. 将 `apaper.css`、`apaper-dark.css` 和 `apaper` 文件夹复制到 Typora 主题文件夹。
+4. 重启 Typora，并在主题菜单中选择 **Apaper** 或 **Apaper Dark**。
+
+## 主题选择
+
+| 系统或应用配色 | Typora 主题 |
+| :-- | :-- |
+| 亮色 | **Apaper** |
+| 暗色 | **Apaper Dark** |
+| 系统保持亮色，但希望 Typora 使用暗色编辑界面 | **Apaper Dark** |
+
+Typora 会将 `apaper.css` 和 `apaper-dark.css` 识别为两个独立主题；当你想切换编辑界面的配色时，直接从 Typora 的主题菜单选择对应主题即可。
 
 ## 文件结构
 
 ```text
 apaper.css
+apaper-dark.css
 apaper/
 └── fonts/
     └── maple-mono-cn/
