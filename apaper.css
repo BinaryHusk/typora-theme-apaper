@@ -610,22 +610,65 @@ tt {
   color: currentColor;
 }
 
+#write mjx-container[display="true"] {
+  color: inherit;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#write mjx-merror {
+  border: 0 !important;
+  background: transparent !important;
+  color: inherit;
+}
+
+#write g[data-mml-node="merror"] > rect[data-background] {
+  fill: transparent !important;
+  stroke: none !important;
+}
+
 #write .md-math-block,
-#write .mathjax-block,
-#write .md-mathjax-panel,
-#write pre.md-fences.md-fences-math {
+#write .mathjax-block {
   margin: 1.25rem 0;
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--astropaper-border);
-  border-radius: 0.25rem;
-  background: rgba(230, 230, 230, 0.22);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--astropaper-fg);
   overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#write .md-math-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  color: inherit;
 }
 
 #write .md-math-block .MathJax_Display,
 #write .mathjax-block .MathJax_Display {
-  margin: 0;
+  margin: 0.4rem 0;
+}
+
+#write pre.md-fences.md-fences-math {
+  margin: 1.25rem 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--astropaper-fg);
+  overflow-x: auto;
+}
+
+#write .md-mathjax-panel {
+  margin: 1.25rem 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--astropaper-fg);
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 #write .md-mathjax-input,
@@ -633,6 +676,42 @@ tt {
 #write .mathjax-candidate {
   color: var(--astropaper-fg);
   font-family: var(--apaper-font) !important;
+}
+
+#write .md-mathjax-input {
+  padding: 0.25rem 0;
+  border: 0;
+  background: transparent;
+}
+
+#write .md-mathjax-preview,
+#write .mathjax-candidate {
+  padding: 0.5rem 0;
+  border: 0;
+  background: transparent;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#write .md-mathjax-panel .code-tooltip-p,
+#write .md-mathjax-midline {
+  background: transparent;
+}
+
+#write .mathjax-block .md-rawblock-container,
+#write .mathjax-block .md-mathblock-panel,
+#write .mathjax-block .md-math-container,
+#write .mathjax-block .code-tooltip {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#write .mathjax-block .md-rawblock-container {
+  color: var(--astropaper-fg);
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 #write .md-mathjax-midline,
@@ -1220,9 +1299,6 @@ button {
   #write .md-toc,
   #write .md-def-footnote,
   #write .md-def-link,
-  #write .md-math-block,
-  #write .mathjax-block,
-  #write .md-mathjax-panel,
   #write .md-diagram-panel,
   #write pre.md-fences.md-fences-advanced,
   pre.md-meta-block {
@@ -1254,6 +1330,7 @@ button {
   #write .md-def-link,
   #write .md-math-block,
   #write .mathjax-block,
+  #write .md-mathjax-panel,
   #write .md-diagram-panel,
   #write img {
     -webkit-print-color-adjust: exact;
@@ -1336,10 +1413,6 @@ button {
   #write table:not(.md-grid-board) > tr:nth-child(even) > td,
   #write blockquote,
   #write .md-img-error,
-  #write .md-math-block,
-  #write .mathjax-block,
-  #write .md-mathjax-panel,
-  #write pre.md-fences.md-fences-math,
   #write .md-diagram-panel,
   #write pre.md-fences.md-fences-advanced,
   #write .md-htmlblock-container,
