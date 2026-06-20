@@ -301,7 +301,7 @@ body {
   background: rgba(0, 108, 172, 0.06);
 }
 
-#write table {
+#write table:not(.md-grid-board) {
   display: table;
   width: 100%;
   border-collapse: collapse;
@@ -310,28 +310,38 @@ body {
   table-layout: auto;
 }
 
-#write th,
-#write td {
+#write table:not(.md-grid-board) > thead > tr > th,
+#write table:not(.md-grid-board) > tbody > tr > th,
+#write table:not(.md-grid-board) > tfoot > tr > th,
+#write table:not(.md-grid-board) > tr > th,
+#write table:not(.md-grid-board) > thead > tr > td,
+#write table:not(.md-grid-board) > tbody > tr > td,
+#write table:not(.md-grid-board) > tfoot > tr > td,
+#write table:not(.md-grid-board) > tr > td {
   padding: 0.5rem;
   border: 1px solid var(--astropaper-border);
   vertical-align: top;
   word-break: break-word;
 }
 
-#write th {
+#write table:not(.md-grid-board) > thead > tr > th,
+#write table:not(.md-grid-board) > tbody > tr > th,
+#write table:not(.md-grid-board) > tfoot > tr > th,
+#write table:not(.md-grid-board) > tr > th {
   background: rgba(230, 230, 230, 0.42);
   font-weight: 700;
 }
 
-#write thead th {
+#write table:not(.md-grid-board) > thead > tr > th {
   border-bottom-color: rgba(0, 108, 172, 0.42);
 }
 
-#write tr:nth-child(even) td {
+#write table:not(.md-grid-board) > tbody > tr:nth-child(even) > td,
+#write table:not(.md-grid-board) > tr:nth-child(even) > td {
   background: rgba(230, 230, 230, 0.22);
 }
 
-#write table code {
+#write table:not(.md-grid-board) code {
   word-break: break-all;
 }
 
@@ -346,6 +356,26 @@ body {
 #write .md-table-resize-popover .btn {
   border-color: var(--astropaper-border);
   color: var(--astropaper-fg);
+}
+
+/* Keep Typora's insert-table picker from inheriting article table styles. */
+#write table.md-grid-board {
+  width: auto;
+  margin: 10px auto;
+  border-collapse: separate;
+  border-spacing: 2px;
+  color: inherit;
+  font-size: inherit;
+  table-layout: auto;
+}
+
+#write table.md-grid-board td {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  vertical-align: middle;
+  word-break: normal;
 }
 
 #write code,
@@ -1200,8 +1230,12 @@ button {
     color: #282728;
   }
 
-  #write th,
-  #write tr:nth-child(even) td {
+  #write table:not(.md-grid-board) > thead > tr > th,
+  #write table:not(.md-grid-board) > tbody > tr > th,
+  #write table:not(.md-grid-board) > tfoot > tr > th,
+  #write table:not(.md-grid-board) > tr > th,
+  #write table:not(.md-grid-board) > tbody > tr:nth-child(even) > td,
+  #write table:not(.md-grid-board) > tr:nth-child(even) > td {
     background: #f4f4f4;
   }
 
@@ -1291,11 +1325,15 @@ button {
     text-decoration-color: rgba(255, 107, 1, 0.58);
   }
 
-  #write th {
+  #write table:not(.md-grid-board) > thead > tr > th,
+  #write table:not(.md-grid-board) > tbody > tr > th,
+  #write table:not(.md-grid-board) > tfoot > tr > th,
+  #write table:not(.md-grid-board) > tr > th {
     background: rgba(52, 63, 96, 0.52);
   }
 
-  #write tr:nth-child(even) td,
+  #write table:not(.md-grid-board) > tbody > tr:nth-child(even) > td,
+  #write table:not(.md-grid-board) > tr:nth-child(even) > td,
   #write blockquote,
   #write .md-img-error,
   #write .md-math-block,
