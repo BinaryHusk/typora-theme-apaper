@@ -1000,22 +1000,55 @@ sub {
 #write .md-diagram-panel,
 #write pre.md-fences.md-fences-advanced {
   margin: 1.25rem 0;
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--astropaper-border);
-  border-radius: 0.25rem;
-  background: rgba(230, 230, 230, 0.22);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   color: var(--astropaper-fg);
   overflow-x: auto;
 }
 
+#write pre.md-fences.md-fences-advanced:not(.md-focus) {
+  white-space: nowrap;
+}
+
+#write pre.md-fences.md-fences-advanced:not(.md-focus) .CodeMirror {
+  display: none !important;
+}
+
+#write pre.md-fences.md-fences-advanced .CodeMirror,
+#write pre.md-fences.md-fences-advanced .CodeMirror-scroll,
+#write pre.md-fences.md-fences-advanced .CodeMirror-lines,
+#write pre.md-fences.md-fences-advanced .CodeMirror-code,
+#write pre.md-fences.md-fences-advanced .CodeMirror-gutters,
+#write pre.md-fences.md-fences-advanced .CodeMirror-activeline-background,
+#write pre.md-fences.md-fences-advanced .CodeMirror-focused .CodeMirror-activeline-background {
+  border: 0;
+  background: transparent !important;
+}
+
+#write pre.md-fences.md-fences-advanced .CodeMirror-hscrollbar,
+#write pre.md-fences.md-fences-advanced .CodeMirror-vscrollbar,
+#write pre.md-fences.md-fences-advanced .CodeMirror-scrollbar-filler,
+#write pre.md-fences.md-fences-advanced .CodeMirror-gutter-filler {
+  display: none !important;
+}
+
 #write .md-diagram-panel-header,
 #write .md-diagram-panel-error {
+  display: none;
   color: rgba(40, 39, 40, 0.68);
   font-family: var(--apaper-font) !important;
   font-size: 0.86rem;
 }
 
-#write .md-diagram-panel-error {
+#write .md-diagram-panel-header:not(:empty),
+#write .md-diagram-panel-error:not(:empty) {
+  display: block;
+}
+
+#write .md-diagram-panel-error:not(:empty) {
   padding: 0.6rem 0.75rem;
   border-left: 0.18rem solid var(--astropaper-accent);
   background: rgba(255, 107, 1, 0.08);
@@ -1069,10 +1102,26 @@ sub {
 
 #write .md-diagram-panel .edgeLabel rect,
 #write [lang="mermaid"] .edgeLabel rect,
+#write .md-diagram-panel .labelBkg,
+#write [lang="mermaid"] .labelBkg,
 #write .md-diagram-panel .cluster rect {
   fill: var(--astropaper-bg) !important;
   stroke: var(--astropaper-border) !important;
   opacity: 1 !important;
+}
+
+#write .md-diagram-panel .edgeLabel,
+#write [lang="mermaid"] .edgeLabel,
+#write .md-diagram-panel .edgeLabel .label,
+#write [lang="mermaid"] .edgeLabel .label,
+#write .md-diagram-panel .edgeLabel div,
+#write [lang="mermaid"] .edgeLabel div,
+#write .md-diagram-panel .edgeLabel p,
+#write [lang="mermaid"] .edgeLabel p,
+#write .md-diagram-panel .edgeLabel span,
+#write [lang="mermaid"] .edgeLabel span {
+  background: var(--astropaper-bg) !important;
+  color: var(--astropaper-fg) !important;
 }
 
 .md-focus,
@@ -1423,8 +1472,6 @@ pre.md-meta-block,
 #write table:not(.md-grid-board) > tr:nth-child(even) > td,
 #write blockquote,
 #write .md-img-error,
-#write .md-diagram-panel,
-#write pre.md-fences.md-fences-advanced,
 #write .md-htmlblock-container,
 #write .md-rawblock-container,
 .md-toc,
@@ -1465,7 +1512,7 @@ pre.md-meta-block {
   color: rgba(234, 237, 243, 0.68);
 }
 
-#write .md-diagram-panel-error {
+#write .md-diagram-panel-error:not(:empty) {
   background: rgba(255, 107, 1, 0.12);
 }
 
