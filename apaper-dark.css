@@ -475,15 +475,59 @@ tt {
 #write pre.md-fences .code-tooltip {
   right: 0.5rem;
   top: 0.35rem;
+  bottom: auto;
+  left: auto;
+  width: max-content;
+  height: auto;
+  min-height: 0;
+  max-width: calc(100% - 1rem);
+  padding: 0;
+  line-height: 1;
 }
 
 #write pre.md-fences .code-tooltip .mode {
+  box-sizing: border-box;
+  display: block;
+  width: 7.5rem;
+  min-width: 0;
+  max-width: 100%;
+  height: 1.35rem;
+  padding: 0 0.45rem;
   border: 1px solid var(--astropaper-border);
   border-radius: 0.2rem;
   background: var(--astropaper-bg);
   color: rgba(40, 39, 40, 0.72);
   font-family: var(--apaper-font) !important;
   font-size: 0.78rem;
+}
+
+#fences-auto-suggest.auto-suggest-container {
+  min-width: 7.5rem;
+  max-width: 12rem;
+  max-height: 9rem;
+  padding: 0.25rem 0;
+  border: 1px solid var(--astropaper-border);
+  border-radius: 0.25rem;
+  background: var(--astropaper-bg);
+  box-shadow: 0 0.45rem 1rem rgba(40, 39, 40, 0.12);
+  color: var(--astropaper-fg);
+  font-family: var(--apaper-font) !important;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#fences-auto-suggest.auto-suggest-container li {
+  padding: 0.18rem 0.6rem;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+#fences-auto-suggest.auto-suggest-container li.active,
+#fences-auto-suggest.auto-suggest-container li:hover {
+  background: var(--item-hover-bg-color);
+  color: var(--item-hover-text-color);
 }
 
 #write .md-htmlblock,
