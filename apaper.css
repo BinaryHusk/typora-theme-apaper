@@ -9,6 +9,8 @@
   --apaper-font: "Maple Mono CN", "Google Sans Code", ui-monospace,
     SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
     monospace;
+  --apaper-code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   --bg-color: #fdfdfd;
   --text-color: #282728;
   --md-char-color: rgba(40, 39, 40, 0.42);
@@ -23,7 +25,7 @@
   --side-bar-bg-color: #fdfdfd;
   --item-hover-bg-color: rgba(230, 230, 230, 0.72);
   --item-hover-text-color: #282728;
-  --monospace: var(--apaper-font);
+  --monospace: var(--apaper-code-font);
 
   --astropaper-bg: #fdfdfd;
   --astropaper-fg: #282728;
@@ -1194,6 +1196,24 @@ sub {
 .cm-s-typora-default pre,
 .cm-s-typora-default span {
   font-family: var(--apaper-font) !important;
+}
+
+#write code,
+#write [md-inline="code"] code,
+tt,
+#write pre.md-fences,
+#write pre.md-fences .CodeMirror,
+#write pre.md-fences .CodeMirror *,
+#write .md-htmlblock .CodeMirror,
+#write .md-htmlblock .CodeMirror *,
+#write .md-rawblock .CodeMirror,
+#write .md-rawblock .CodeMirror *,
+#typora-source,
+#typora-source .CodeMirror,
+#typora-source .CodeMirror * {
+  font-family: var(--apaper-code-font) !important;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "clig" 0, "calt" 0;
 }
 
 #typora-source .cm-header {
