@@ -41,6 +41,7 @@
   --astropaper-rawblock-hover-bg: rgba(230, 230, 230, 0.45);
   --astropaper-line-highlight: rgba(148, 163, 184, 0.2);
   --astropaper-selection: rgba(0, 108, 172, 0.75);
+  --astropaper-task-border: #9ca3af;
   --apaper-code-font-size: 14px;
   --apaper-code-line-height: 22px;
   --rawblock-edit-panel-bd: var(--astropaper-rawblock-hover-bg);
@@ -992,51 +993,65 @@ sub {
 }
 
 .task-list {
-  padding-left: 0;
+  padding-left: 1.55rem;
 }
 
 .task-list-item {
-  padding-left: 1.8rem;
+  position: relative;
+  padding-left: 0;
   list-style: none;
 }
 
-.task-list-item input {
-  position: relative;
-  top: 0.2rem;
-  margin-left: -1.55rem;
+.task-list-item > input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin-left: -1.2em;
+  margin-top: calc(1em - 10px);
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
-.task-list-item input::before {
+.task-list-item > input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: -3.5px;
   box-sizing: border-box;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  border: 1px solid var(--astropaper-border);
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--astropaper-task-border);
   border-radius: 0.2rem;
   background: var(--astropaper-bg);
 }
 
-.task-list-done input::before {
+.task-list-done > input[type="checkbox"]::before {
   border-color: var(--astropaper-accent);
   background: var(--astropaper-accent);
 }
 
-.task-list-done input::after {
+.task-list-done > input[type="checkbox"]::after {
   content: "";
   position: absolute;
-  left: 0.28rem;
-  top: 0.08rem;
-  width: 0.34rem;
-  height: 0.58rem;
+  left: 2px;
+  top: 5px;
+  width: 0.6rem;
+  height: 0.3rem;
   border: solid var(--astropaper-bg);
-  border-width: 0 0.12rem 0.12rem 0;
-  transform: rotate(40deg);
+  border-width: 0 0 0.12rem 0.12rem;
+  transform: rotate(-45deg);
 }
 
 .task-list-done p {
   color: rgba(40, 39, 40, 0.66);
   text-decoration: line-through;
   text-decoration-color: rgba(0, 108, 172, 0.5);
+  text-decoration-thickness: 2px;
 }
 
 .mathjax-block {
