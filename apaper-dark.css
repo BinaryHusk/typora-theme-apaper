@@ -941,7 +941,32 @@ sub {
   font-size: 0.92rem;
 }
 
+#write div.md-toc-tooltip {
+  position: static;
+  box-sizing: border-box;
+  width: auto;
+  margin: 0 0 0.7rem;
+  padding: 0.35rem 0.55rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: rgba(230, 230, 230, 0.44);
+  line-height: 1.45;
+}
+
+#write .md-toc:focus,
+#write .md-toc.md-focus {
+  box-shadow: none;
+}
+
+#write .md-toc:focus .md-toc-content,
+#write .md-toc.md-focus .md-toc-content {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .md-toc-content {
+  padding: 0;
   margin-bottom: 0;
 }
 
@@ -990,6 +1015,15 @@ sub {
 .md-delete-toc {
   color: rgba(40, 39, 40, 0.62);
   font-family: var(--apaper-font) !important;
+}
+
+#write .md-toc-tooltip .md-delete-toc {
+  float: right;
+  padding: 0 0.2rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  line-height: inherit;
 }
 
 .task-list {
@@ -1564,6 +1598,10 @@ pre.md-meta-block,
 .md-def-link,
 pre.md-meta-block {
   background: rgba(52, 63, 96, 0.32);
+}
+
+#write div.md-toc-tooltip {
+  background: rgba(52, 63, 96, 0.58);
 }
 
 #write .md-image,
