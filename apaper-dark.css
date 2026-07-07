@@ -42,6 +42,7 @@
   --astropaper-line-highlight: rgba(148, 163, 184, 0.2);
   --astropaper-selection: rgba(255, 107, 1, 0.75);
   --astropaper-task-border: #9ca3af;
+  --drag-placeholder-color: #c7c5c5;
   --apaper-code-font-size: 14px;
   --apaper-code-line-height: 22px;
   --rawblock-edit-panel-bd: var(--astropaper-rawblock-hover-bg);
@@ -306,10 +307,12 @@ body {
   background: rgba(255, 107, 1, 0.06);
 }
 
-#write table:not(.md-grid-board) {
+#write table:not(.md-grid-board),
+table.md-table:not(.md-grid-board) {
   display: table;
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   color: var(--astropaper-fg);
   font-size: 0.95rem;
   table-layout: auto;
@@ -322,7 +325,15 @@ body {
 #write table:not(.md-grid-board) > thead > tr > td,
 #write table:not(.md-grid-board) > tbody > tr > td,
 #write table:not(.md-grid-board) > tfoot > tr > td,
-#write table:not(.md-grid-board) > tr > td {
+#write table:not(.md-grid-board) > tr > td,
+table.md-table:not(.md-grid-board) > thead > tr > th,
+table.md-table:not(.md-grid-board) > tbody > tr > th,
+table.md-table:not(.md-grid-board) > tfoot > tr > th,
+table.md-table:not(.md-grid-board) > tr > th,
+table.md-table:not(.md-grid-board) > thead > tr > td,
+table.md-table:not(.md-grid-board) > tbody > tr > td,
+table.md-table:not(.md-grid-board) > tfoot > tr > td,
+table.md-table:not(.md-grid-board) > tr > td {
   padding: 0.5rem;
   border: 1px solid var(--astropaper-border);
   vertical-align: top;
@@ -332,22 +343,71 @@ body {
 #write table:not(.md-grid-board) > thead > tr > th,
 #write table:not(.md-grid-board) > tbody > tr > th,
 #write table:not(.md-grid-board) > tfoot > tr > th,
-#write table:not(.md-grid-board) > tr > th {
+#write table:not(.md-grid-board) > tr > th,
+table.md-table:not(.md-grid-board) > thead > tr > th,
+table.md-table:not(.md-grid-board) > tbody > tr > th,
+table.md-table:not(.md-grid-board) > tfoot > tr > th,
+table.md-table:not(.md-grid-board) > tr > th {
   background: rgba(230, 230, 230, 0.42);
   font-weight: 700;
 }
 
-#write table:not(.md-grid-board) > thead > tr > th {
+#write table:not(.md-grid-board) > thead > tr > th,
+table.md-table:not(.md-grid-board) > thead > tr > th {
   border-bottom-color: rgba(255, 107, 1, 0.42);
 }
 
 #write table:not(.md-grid-board) > tbody > tr:nth-child(even) > td,
-#write table:not(.md-grid-board) > tr:nth-child(even) > td {
+#write table:not(.md-grid-board) > tr:nth-child(even) > td,
+table.md-table:not(.md-grid-board) > tbody > tr:nth-child(even) > td,
+table.md-table:not(.md-grid-board) > tr:nth-child(even) > td {
   background: rgba(230, 230, 230, 0.22);
 }
 
-#write table:not(.md-grid-board) code {
+#write table:not(.md-grid-board) code,
+table.md-table:not(.md-grid-board) code {
   word-break: break-all;
+}
+
+#write .md-table-fig .md-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.typora-on-moving td,
+.typora-on-moving th,
+td.typora-on-moving,
+th.typora-on-moving {
+  border-color: var(--astropaper-border) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  background: var(--drag-placeholder-color) !important;
+  background-color: var(--drag-placeholder-color) !important;
+  background-image: none !important;
+  color: transparent !important;
+  text-shadow: none !important;
+  opacity: 1;
+}
+
+.typora-on-moving td *,
+.typora-on-moving th *,
+td.typora-on-moving *,
+th.typora-on-moving * {
+  visibility: hidden !important;
+  background: transparent !important;
+  color: transparent !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+#typora-table-col-tracker,
+#typora-table-row-tracker,
+.typora-table-insert-marker {
+  z-index: 99;
+}
+
+.typora-table-insert-marker .fa {
+  color: var(--astropaper-accent);
 }
 
 #write .md-table-edit,
@@ -1535,6 +1595,7 @@ button {
   --astropaper-line-highlight: rgba(52, 63, 96, 0.68);
   --astropaper-selection: rgba(255, 107, 1, 0.75);
   --astropaper-task-border: rgba(175, 185, 202, 0.7);
+  --drag-placeholder-color: #596275;
   --astropaper-code-selection-bg: rgba(52, 63, 96, 0.92);
   --astropaper-code-selection-fg: #eaedf3;
   --select-text-bg-color: var(--astropaper-code-selection-bg);
@@ -1583,12 +1644,18 @@ pre.md-meta-block,
 #write table:not(.md-grid-board) > thead > tr > th,
 #write table:not(.md-grid-board) > tbody > tr > th,
 #write table:not(.md-grid-board) > tfoot > tr > th,
-#write table:not(.md-grid-board) > tr > th {
+#write table:not(.md-grid-board) > tr > th,
+table.md-table:not(.md-grid-board) > thead > tr > th,
+table.md-table:not(.md-grid-board) > tbody > tr > th,
+table.md-table:not(.md-grid-board) > tfoot > tr > th,
+table.md-table:not(.md-grid-board) > tr > th {
   background: rgba(52, 63, 96, 0.52);
 }
 
 #write table:not(.md-grid-board) > tbody > tr:nth-child(even) > td,
 #write table:not(.md-grid-board) > tr:nth-child(even) > td,
+table.md-table:not(.md-grid-board) > tbody > tr:nth-child(even) > td,
+table.md-table:not(.md-grid-board) > tr:nth-child(even) > td,
 #write blockquote,
 #write .md-img-error,
 #write .md-htmlblock-container,
